@@ -37,7 +37,7 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter{
 	public DataSource getDataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.postgresql.Driver");
-		dataSource.setUrl("jdbc:postgresql://127.0.0.1:5432/contactdb");
+		dataSource.setUrl("jdbc:postgresql://postgresqlcontainer:5432/contactdb");
 		dataSource.setUsername("postgres");
 		dataSource.setPassword("polaroid");
 		

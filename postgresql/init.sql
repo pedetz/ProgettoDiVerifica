@@ -1,6 +1,6 @@
 CREATE DATABASE contactdb;
 
-CREATE TABLE public.contact
+CREATE TABLE contact
 (
     contact_id serial NOT NULL,
     name character varying(45) NOT NULL,
@@ -10,5 +10,5 @@ CREATE TABLE public.contact
     PRIMARY KEY (contact_id)
 );
 
-ALTER TABLE IF EXISTS public.contact
+ALTER TABLE IF EXISTS contact
     OWNER to postgres;
