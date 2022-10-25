@@ -1,0 +1,34 @@
+version: '2.10.2'
+
+networks:
+  progettoverifica:
+    driver: bridge
+
+services:
+    tomcat:
+      build: .
+      image: 8-jdk8-openjdk
+      container_name: tomcatcontainer
+      ports:
+      - "8080:8080"
+      depends_on:
+      - postgresql
+      networks:
+      - progettoverifica
+
+    postgresql:
+      build: ./postgresql
+      image: postgres
+      container_name: postgresqlcontainer
+      ports:
+      - 5432:5432
+      environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: polaroid
+        
+      networks:
+      - progettoverifica
+
+
+     
+     
